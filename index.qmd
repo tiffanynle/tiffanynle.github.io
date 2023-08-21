@@ -1,0 +1,23 @@
+---
+title: "Hi there."
+image: profile.jpg
+
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: github
+      text: GitHub
+      href: https://github.com/tiffanynle
+    - icon: envelope-fill
+      text: Email
+sidebar: false
+
+format:
+  html:
+    pagetitle: "Tiffany Le | Home"
+---
+
+My name is Tiffany Le. I'm a computer science and mathematics student.
