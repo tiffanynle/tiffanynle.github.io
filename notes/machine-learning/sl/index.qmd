@@ -19,30 +19,47 @@ $$
 
 ## Overview
 
+insert overview here 
 
 ## Notation 
 
 ::: {.callout-note icon="false"}
 ## Definition: Instance Space
 
-An *instance space* is a set $\X$ that contains the objects we may want to label; i.e., this is the domain of the function we want to learn.
+An *instance space* is a set $\X$ that contains the objects we may want to label; i.e., $\X$ is the domain of the function we want to learn.
 :::
 
 ::: {.callout-note icon="false"}
 ## Definition: Instance
 
-An *instance* is an element $x \in \X$. Generally, $x$ is a vector of $n$ coordinates; i.e., 
+An *instance* is an element $x \in \X$. Generally, $x$ is a vector of dimension $n$; i.e., 
 $$
 x = (x_1, x_2, \ldots x_n).
 $$
 
-The coordinates of $x$ are called *attributes* or *features*.
+The coordinates of $x$ are called *attributes* or *features.*
+:::
+
+::: {.callout-note icon="false"}
+## Definition: Label Set
+
+A *label set* is a set $\Y$ that contains the possible labels for the objects in $\X$; i.e., $\Y$ is the codomain of the function we want to learn.
+
+An element $y \in \Y$ is called a *label.*
+:::
+
+::: {.callout-note icon="false"}
+# Definition: Example
+
+An *example* is a labeled instance of form $(x, y) \space \text{where } x \in \X, \space y \in \Y.$
 :::
 
 ::: {.callout-note icon="false"}
 ## Definition: Hypothesis
 
-todo
+A *hypothesis* $h : \X \rightarrow \Y$ is a function
+
+This may also be called a *predictor* or a *classifier.*
 :::
 
 ::: {.callout-note icon="false"}
