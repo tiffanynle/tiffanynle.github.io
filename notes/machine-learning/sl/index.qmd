@@ -19,7 +19,7 @@ $$
 
 ## Overview
 
-insert overview here 
+This page will go over some definitions and notation that may be seen when discussing supervised learning (though, perhaps defined more like what is generally seen in learning theory), as well as some basic ideas, such as classification, regression, and empirical risk minimization (ERM).
 
 ## Notation 
 
@@ -57,15 +57,19 @@ An *example* is a labeled instance of form $(x, y) \space \text{where } x \in \X
 ::: {.callout-note icon="false"}
 ## Definition: Hypothesis
 
-A *hypothesis* $h : \X \rightarrow \Y$ is a function
+A *hypothesis* is a function $h : \X \rightarrow \Y$ that attempts to hypothesize how reality works (in other words, attempting to model reality), based upon the training examples given as input.
 
-This may also be called a *predictor* or a *classifier.*
+This may also be called a *predictor,* a *classifier,* or a *model.*
 :::
+
+In other words, a hypothesis is given only a list of training examples $S = ((x_1, y_1), \ldots (x_n, y_n)),$ and extracts information from this list in order to be able to make predictions on (unseen) objects in $\X.$
 
 ::: {.callout-note icon="false"}
 ## Definition: Hypothesis Space
 
-todo
+The *hypothesis space* $\H$ is the set of functions from which we may select one as a hypothesis.
+
+In other words, $h \in \H.$
 :::
 
 ::: {.callout-note icon="false"}
