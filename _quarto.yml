@@ -12,10 +12,10 @@ website:
     border: true
     background: light
     center:
-      - icon: linkedin
-        href: https://linkedin.com
       - icon: github
         href: https://github.com/tiffanynle
+      - icon: envelope-fill
+        href: https://tiffanynle.github.io
     right: "website built with [Quarto](https://quarto.org)"
  
   navbar:

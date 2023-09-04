@@ -8,7 +8,7 @@ format:
     pagetitle: "Tiffany Le | Notes"
 ---
 
-A place to store some of the notes I've taken and cleaned up, from class or otherwise. 
+A place to store some of the notes I've taken and cleaned up for my own use, whether it was from class or otherwise. 
 
 I can't guarantee the correctness of any of these, so, if you see something is amiss, please feel free to [report it on GitHub](https://github.com/tiffanynle/tiffanynle.github.io/issues/new).
 

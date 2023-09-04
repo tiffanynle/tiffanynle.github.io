@@ -13,6 +13,7 @@ about:
       href: https://github.com/tiffanynle
     - icon: envelope-fill
       text: Email
+
 sidebar: false
 
 format:
