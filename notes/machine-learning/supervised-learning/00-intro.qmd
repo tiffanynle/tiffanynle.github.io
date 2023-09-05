@@ -96,7 +96,7 @@ There are some things to note: we do not know what distribution $\D$ governs the
 
 What we *do* have is a list[^1] of examples $S$: 
 $$
-S = ((x_1, y_1), \ldots (x_n, y_n))
+S = ((x_1, y_1), \ldots (x_m, y_m))
 $$ 
 
 [^1]: In some cases, the order of the examples matters. So this really is a list, and not a set.
@@ -197,16 +197,21 @@ From this, we get the idea that there is some *expected* loss that the hypothesi
 Given a hypothesis $h \in \H,$ a concept $c \in C,$ some loss function $\ell$, and some distribution $\D,$ the *true risk* of a hypothesis is
 
 $$
-R(h, c) = \E_{x \sim \D} \space \lbrack \ell(h(x), c(x)) \rbrack
+R(h, c) = \E_{x \sim \D} \space \lbrack \ell (h(x), c(x)) \rbrack
 $$
 
 This may also be known as the *generalization error* or the *true error.*
 :::
 
-We want to minimize this, butsince we do not know anything about $\D,$ we have to use the *empirical risk* as a stand-in:
+We want to minimize this, but since we do not know anything about $\D,$ we have to use the *empirical risk* as a stand-in:
 
 ::: {.callout-note icon="false"}
 
 # Definition: Empirical Risk
 
+Given a hypothesis $h \in \H,$ a concept $c \in C,$ some loss function $\ell$, and some examples $S = ((x_1, y_1), \ldots (x_n, y_m)),$ the *empirical risk* of a hypothesis is
+
+$$
+\hat{R}(h, c) = \frac{1}{n} \sum_{i = 1}^{m} \ell (h(x_i), c(x_i))
+$$
 :::
