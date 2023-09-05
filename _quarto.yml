@@ -7,7 +7,7 @@ website:
   repo-url: https://github.com/tiffanynle/tiffanynle.github.io
   repo-actions: [edit, issue]
   page-navigation: true
-
+  
   page-footer: 
     border: true
     background: light

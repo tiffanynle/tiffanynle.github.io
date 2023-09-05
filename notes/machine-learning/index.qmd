@@ -1,0 +1,25 @@
+---
+title: "Machine Learning"
+subtitle: "Links to books and other resources"
+page-layout: full
+
+format:
+    html:
+        pagetitle: "Notes | Machine Learning"
+---
+
+There are quite a few books and resources relevant to machine learning that also happen to be readily available. Some are linked below.
+
+(Disclaimer: I have not looked at all of these.)
+
+## Books
+- [Machine Learning](https://www.cs.cmu.edu/~tom/mlbook.html), by Tom Mitchell
+- [An Introduction to Statistical Learning](https://www.statlearning.com/), by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani
+- [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/), by Trevor Hastie, Robert Tibshirani, Jerome Friedman
+- [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/), by Stephen Boyd, Lieven Vandenberghe
+- [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf), by Christopher Bishop
+- [Probabilistic Machine Learning series](https://probml.github.io/pml-book/), Kevin Murphy
+- [Understanding Machine Learning: From Theory to Algorithms](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html), by Shai Shalev-Shwartz, Shai Ben-David
+- [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlbook/), by Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar
+- [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html), by Richard Sutton, Andrew Barto
+- [Algorithms of Reinforcement Learning](https://sites.ualberta.ca/~szepesva/rlbook.html), by Csaba Szepesvári

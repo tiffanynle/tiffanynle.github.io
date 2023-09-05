@@ -21,4 +21,4 @@ format:
     pagetitle: "Tiffany Le | Home"
 ---
 
-My name is Tiffany Le. I'm a computer science and mathematics student.
+My name is Tiffany Le. I'm a computer science and mathematics student at [OU](https://www.ou.edu/).

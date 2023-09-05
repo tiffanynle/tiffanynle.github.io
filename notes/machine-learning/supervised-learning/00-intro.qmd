@@ -15,6 +15,7 @@ $$
 \def\H{{\mathcal{H}}}
 \def\D{{\mathcal{D}}}
 \def\R{{\mathbb{R}}}
+\def \E{{\mathbb{E}}}
 $$
 :::
 
@@ -22,7 +23,7 @@ $$
 
 This page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts, such as classification, regression, and empirical risk minimization.
 
-A non-trivial portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took [CS4033](https://www.diochnos.com/teaching/CS4033/2023S/index.php). Other references will be linked when appropriate.
+A non-trivial (...?) portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took [CS4033](https://www.diochnos.com/teaching/CS4033/2023S/index.php). Other references will be mentioned when appropriate.
 
 ## Notation 
 
@@ -84,33 +85,39 @@ A *concept* is a function $c : \X \rightarrow \Y$ that actually models reality a
 ::: {.callout-note icon="false"}
 ## Definition: Concept Class
 
-The *concept class* is the set of functions $\C$ from which the concept function is coming from.
+The *concept class* is the class of functions $\C$ from which the concept function is coming from.
 
 In other words, $c \in \C$.
 :::
 
-In the supervised setting, we may assume there is some unknown labeling function or concept function that accurately labels instance in $\X.$ We want to be able to *learn* this function; i.e., we want to have a learner be able to produce a function $h$ that labels instances as $c$ does; in other words, $c$ is our target concept.
+In the supervised setting, we may assume there is some unknown labeling or concept function $c$ that accurately labels instances in $\X.$ We want to be able to *learn* this function; i.e., we want to have a learner be able to produce a function $h$ that labels instances as $c$ does; i.e., $c$ is our target concept.
 
 There are some things to note: we do not know what distribution $\D$ governs the instance space $\X$, so, we have no idea how the instances are generated; we do not have access to $\X$ itself; nor do we know the actual labeling function $c.$ (Otherwise, what is there to learn?) 
 
-Really, we have only a list of training examples of form: 
+What we *do* have is a list[^1] of examples $S$: 
 $$
 S = ((x_1, y_1), \ldots (x_n, y_n))
 $$ 
 
-which we use to train a learner. This learner then outputs some hypothesis $h \in \H$ that may or may not accurately label instances in $\X$ that it encounters.
+[^1]: In some cases, the order of the examples matters. So this really is a list, and not a set.
+
+which we use to train a learner. This learner then outputs some hypothesis $h \in \H$ that may or may not accurately label new, unseen instances in $\X$ that it encounters.
+
+ In other words, the hypothesis $h$ may or may not *generalize well.*
 
 ## Loss Functions
 
-We have a list of examples $S,$ so we know how some specific instances $x_1, \ldots x_n$ are labeled. We give some of these examples to a learner, who then outputs some hypothesis $h.$ This hypothesis may or may not accurately label other instances. We want it to be accurate with respect to the concept function.
+We have a list of examples $S,$ so we know how some specific instances $x_1, \ldots x_n \in \X^n$ are labeled. We give some of these examples to a learner, who then outputs some hypothesis $h.$ This hypothesis may or may not generalize well. We want it to. 
 
 The question, then, is: *how can the learner learn from its mistakes?*
 
-This is where the concept of loss (or error) and loss functions come in. **Loss functions** are of the form
+This is where the concept of loss (or error) and loss functions come in. **Loss functions** are of the form[^2]
 
 $$
 \ell : \Y \times \Y \rightarrow \R
 $$
+
+[^2]: Actually, there is another way to define loss functions—but that is for another time.
 
 where it takes in two labels $(y_1, y_2)$ and outputs some penalty. The type of loss function that is used is dependent on several factors, such as the type of problem the learner is working on. 
 
@@ -126,17 +133,17 @@ $$
 \ell_{0-1}(y_1, y_2) = 
 \begin{cases}
 1, &\text{if } y_1 \neq y_2 \\
-0, &\text{otherwise} \\
+0, &\text{if } y_1 = y_2 \\
 \end{cases}
 $$
 
 Quite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.
 
-There are other loss functions that may be used for classification, such as **cross-entropy loss** (also known as **log-loss**).
+There are other loss functions that may be used for classification, such as **cross-entropy loss** (also known as **log-loss**), which is relevant when discussing things like [logistic regression](05-logistic.qmd).
 
 ### Regression
 
-For regression problems,  we are trying to predict some value in $\R,$ rather than a class label. In these cases, it would not make much sense to use 0–1 loss.
+For regression problems, we are trying to predict some value in $\R,$ rather than a class label. In these cases, it would not make much sense to use 0–1 loss.
 
 As for why, consider this: we have that, for some example $x_i,$
 
@@ -163,8 +170,10 @@ $$
 
 Generally, for regression problems, we use the **square (or quadratic) loss** function:
 $$
-\ell_{\text{sq}}(y_1, y_2) = (y_1 - y_2)^2.
+\ell_{\text{sq}}(y_1, y_2) = (y_1 - y_2)^2
 $$
+
+as this is differentiable everywhere, which is useful in some cases.
 
 ## Empirical Risk Minimization
 
@@ -175,5 +184,29 @@ So, for supervised learning problems we have:
 - a target concept $c \in \C$
 - a loss function $\ell$
 
-from which we need to somehow determine the quality of our hypothesis.
+from which we need to somehow determine the quality of our hypothesis when it labels new, unseen instances in $\X.$
 
+As a reminder, we do not know *anything* about the distribution $\D$ that governs $\X.$ We have no idea! Regardless, $h$ will predict labels for these instances $x \sim \D$, and these predictions may or may not be correct. And with every incorrect prediction, $h$ will incur some penalty.
+
+From this, we get the idea that there is some *expected* loss that the hypothesis will suffer over the whole instance space, and the definition of **true risk** follows:
+
+::: {.callout-note icon="false"}
+
+# Definition: True Risk
+
+Given a hypothesis $h \in \H,$ a concept $c \in C,$ some loss function $\ell$, and some distribution $\D,$ the *true risk* of a hypothesis is
+
+$$
+R(h, c) = \E_{x \sim \D} \space \lbrack \ell(h(x), c(x)) \rbrack
+$$
+
+This may also be known as the *generalization error* or the *true error.*
+:::
+
+We want to minimize this, butsince we do not know anything about $\D,$ we have to use the *empirical risk* as a stand-in:
+
+::: {.callout-note icon="false"}
+
+# Definition: Empirical Risk
+
+:::
