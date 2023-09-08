@@ -1,0 +1,165 @@
+---
+title: "Review: Probability Theory"
+page-layout: full
+bibliography: references.bib
+
+format:
+    html:
+        pagetitle: "Mathematics Review | Probability Theory"
+---
+
+::: {.hidden}
+$$
+\def\R{{\mathbb{R}}}
+\def\E{{\text{E}}}
+\def\Var{{\text{Var}}}
+$$
+:::
+
+## Overview
+
+This page will go over some concepts and results from probability theory that tend to pop up when discussing machine learning and learning theory (and of course, other things).
+
+For definitions, notation, examples, and so on, I am mostly referencing a mix of either [@Wassermann04] and [@BertsekasTsitsiklis08].
+
+## Notation
+
+::: {.callout-note icon="false"}
+## Definition: Sample Space
+
+A *sample space* is a set $\Omega$ that holds all possible outcomes for an experiment.
+
+Points $\omega \in \Omega$ are called *outcomes.* 
+
+Subsets $\Omega$ are called *events.*
+:::
+
+###### Example.
+
+Say we have a have a coin and we toss it twice. Then,
+ 
+- $\Omega = \{HH, HT, TH, TT\}$ is the sample space
+- $\omega = HH$ is a sample outcome
+- $E = \{HH, HT\}$ is the event that the first coin toss is heads
+
+::: {.callout-note icon="false"}
+## Definition: Probability Distribution
+
+A function $\Pr$ that assigns a real number $\Pr(A)$ to each event $A$ is called a *probability distribution* if:
+
+- $\Pr(A) \geq 0$ for every event $A$
+- $\Pr(\Omega) = 1$
+- If events $A_1, A_2, \ldots$ are disjoint, then
+
+$$
+\Pr \left( \bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)
+$$
+
+$\Pr(A)$ is called the *probability* of an event $A.$
+:::
+
+::: {.callout-note icon="false"}
+## Definition: Conditional Probability
+
+The *conditional probability* of an event $A$ given an event $B$ is defined as
+
+$$
+\Pr(A | B) = \frac{\Pr (A \cap B)}{\Pr(B)}.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition: Bayes' Theorem
+Let $A_1, A_2, \ldots A_n$ be disjoint events that form a partition of $\Omega.$ Then for an event $B,$ we have
+
+$$
+\begin{align}
+\Pr(A_i | B) &= \frac{\Pr(A_i) \Pr(B | A_i)}{\Pr(B)} \\
+&= \frac{\Pr(A_i) \Pr(B | A_i)}{\Pr(A_1) \Pr(B | A_1) + \ldots + \Pr(A_n) \Pr(B | A_n)}.
+\end{align}
+$$
+:::
+
+::: {.callout-note icon=false}
+## Definition: Independent Events
+
+Two events $A$ and $B$ are *independent* if
+
+$$
+\Pr(A | B) = \Pr(A).
+$$
+
+Equivalently,
+$$
+\Pr(AB) = \Pr(A) \Pr(B).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition: Random Variable
+
+A *random variable* $X$ is a function
+
+$$
+X : \Omega \rightarrow \R
+$$
+
+that maps every outcome $\omega$ to a real number $X(\omega).$
+:::
+
+::: {.callout-note icon="false"}
+## Definition: Probability Mass Function
+
+The *probability mass function* (PMF) of a discrete random variable $X$ is defined as
+
+$$
+p_{X}(x) = \Pr(X = x).
+$$
+
+In this case $p(x)$ is the *probability mass* of $x.$ 
+:::
+
+Essentially, $p(x)$ is a function that gives the probability that an event $X$ is equal to some value $x.$
+
+##### Example.
+
+We toss a coin twice. The coin tosses are independent. Let the event $X$ be the number of heads obtained; then, the PMF of $X$ is
+
+$$
+p_{X}(x) =
+\begin{cases}
+1/4, &\text{if } x = 0 \text{ or } x=2, \\
+1/2, &\text{if } x=1, \\
+0, &\text{otherwise.}
+\end{cases}
+$$
+
+::: {.callout-note icon="false"}
+## Definition: Expectation
+
+The *expectation* or a random variable $X$ with PMF $p_{X}$ is defined as
+
+$$
+\E(X) = \sum_{x} xp_{X}(x).
+$$
+
+This may also be called the *expected value* or the *mean.*
+:::
+
+
+::: {.callout-note icon="false"}
+## Definition: Variance
+
+The *variance* of a random variable $X$ is defined as
+
+$$
+\Var(X) = \E \lbrack (X - \E[X])^2 \rbrack.
+$$
+
+The square root of this value is $\sigma_{X}$ and is called the *standard deviation.*
+:::
+
+Essentially, variance measures the amount of spread of a random variable $X$ about its mean.
+
+#### References
+
