@@ -1,8 +1,0 @@
----
-title: "Review: Linear Algebra"
-page-layout: full
-
-format:
-    html:
-        pagetitle: "Mathematics Review | Linear Algebra"
----
