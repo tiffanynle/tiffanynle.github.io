@@ -1,0 +1,11 @@
+---
+title: "Projects"
+subtitle: "Under construction"
+listing:
+  contents: projects
+  sort: "date desc"
+  type: default
+  categories: true
+
+sidebar: false
+---

@@ -1,5 +1,6 @@
 ---
 title: "Notes"
+subtitle: Under construction
 page-layout: full
 title-block-banner: false
 
@@ -8,9 +9,9 @@ format:
     pagetitle: "Tiffany Le | Notes"
 ---
 
-A place to store some of the notes I've taken for my own use and cleaned up (and/or expanded on), whether it was from class or otherwise. There may also be some resources and other references linked in various pages. 
+A place to store some of the notes I have taken for my own use and cleaned up (and/or expanded on), whether it was from class or otherwise. There may also be some resources and other references linked in various pages. 
 
-I can't guarantee the correctness of any of these, so, if you see something is amiss, please feel free to [report it on GitHub](https://github.com/tiffanynle/tiffanynle.github.io/issues/new).
+I cannot guarantee the correctness of any of these, so, if you see something is amiss, please feel free to [report it on GitHub](https://github.com/tiffanynle/tiffanynle.github.io/issues/new).
 
 
 

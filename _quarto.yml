@@ -25,6 +25,10 @@ website:
         href: index.qmd
       - text: "notes"
         href: notes/index.qmd
+      - text: "posts"
+        href: posts.qmd
+      - text: "projects"
+        href: projects.qmd
   
   sidebar: 
     - id: notes
@@ -35,7 +39,7 @@ website:
       contents:
         - section: "Notes"
           href: notes/index.qmd
-          contents: notes/**
+          contents: # notes/**
 
 format:
   html:

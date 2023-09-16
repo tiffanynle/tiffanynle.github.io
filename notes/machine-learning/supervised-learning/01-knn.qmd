@@ -1,6 +1,7 @@
 ---
 title: "$k$-Nearest Neighbors"
 page-layout: full
+draft: true
 
 format:
     html:

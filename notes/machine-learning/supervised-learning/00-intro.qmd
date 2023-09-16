@@ -21,9 +21,9 @@ $$
 
 ## Overview
 
-This page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts, such as classification, regression, and empirical risk minimization.
+This page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts. 
 
-A non-trivial (...?) portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took [CS4033](https://www.diochnos.com/teaching/CS4033/2023S/index.php). Other references will be mentioned when appropriate.
+A non-trivial portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took [CS4033](https://www.diochnos.com/teaching/CS4033/2023S/index.php). Other references will be mentioned when appropriate.
 
 ## Notation 
 
@@ -94,12 +94,10 @@ In the supervised setting, we may assume there is some unknown labeling or conce
 
 There are some things to note: we do not know what distribution $\D$ governs the instance space $\X$, so, we have no idea how the instances are generated; we do not have access to $\X$ itself; nor do we know the actual labeling function $c.$ (Otherwise, what is there to learn?) 
 
-What we *do* have is a list[^1] of examples $S$: 
+What we *do* have is a list of examples $S$: 
 $$
 S = ((x_1, y_1), \ldots (x_m, y_m))
 $$ 
-
-[^1]: In some cases, the order of the examples matters. So this really is a list, and not a set.
 
 which we use to train a learner. This learner then outputs some hypothesis $h \in \H$ that may or may not accurately label new, unseen instances in $\X$ that it encounters.
 
@@ -117,7 +115,7 @@ $$
 \ell : \Y \times \Y \rightarrow \R
 $$
 
-[^2]: Actually, there is another way to define loss functions—but that is for another time.
+[^1]: Actually, there is another way to define loss functions—but that is for another time.
 
 where it takes in two labels $(y_1, y_2)$ and outputs some penalty. The type of loss function that is used is dependent on several factors, such as the type of problem the learner is working on. 
 
@@ -139,7 +137,7 @@ $$
 
 Quite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.
 
-There are other loss functions that may be used for classification, such as **cross-entropy loss** (also known as **log-loss**), which is relevant when discussing things like [logistic regression](05-logistic.qmd).
+There are other loss functions that may be used for classification, such as **cross-entropy loss** (also known as **log-loss**), which is relevant when discussing things like [logistic regression](04-logistic_regression.qmd).
 
 ### Regression
 
