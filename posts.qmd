@@ -8,4 +8,8 @@ listing:
   categories: true
 
 sidebar: false
+
+format:
+  html:
+    pagetitle: "Tiffany Le | Posts"
 ---

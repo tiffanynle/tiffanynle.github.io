@@ -30,16 +30,24 @@ website:
       - text: "projects"
         href: projects.qmd
   
-  sidebar: 
-    - id: notes
-      title: "Notes"
-      style: "floating"
-      collapse-level: 1
+  sidebar:
+    - id: notes 
+      title: "notes"
+      style: "docked"
+      pinned: true
+      border: true
+      collapse-level: 3
       align: left
       contents:
         - section: "Notes"
           href: notes/index.qmd
-          contents: # notes/**
+          contents:
+            - section: "Machine Learning"
+              href: notes/machine-learning/index.qmd
+              contents:
+                - section: "Supervised Learning"
+                - section: "Learning Theory"
+                  # contents: notes/machine-learning/supervised-learning/**
 
 format:
   html:

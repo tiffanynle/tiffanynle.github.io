@@ -7,7 +7,7 @@ about:
   links:
     - icon: linkedin
       text: linkedin
-      href: https://www.linkedin.com/in/tiffany-le-5b0927275/
+      href: https://www.linkedin.com/in/tiffany-n-le/
     - icon: github
       text: github
       href: https://github.com/tiffanynle
@@ -22,4 +22,4 @@ format:
     pagetitle: "Tiffany Le | Home"
 ---
 
-My name is Tiffany Le. I am a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/).
+My name is Tiffany Le. I'm a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/). My interests lie broadly in the realms of security, privacy, and machine learning.

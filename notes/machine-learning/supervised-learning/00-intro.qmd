@@ -177,7 +177,7 @@ as this is differentiable everywhere, which is useful in some cases.
 
 So, for supervised learning problems we have:
 
-- a set of examples $S = ((x_1, y_1), \ldots (x_m, y_m))$
+- a list of examples $S = ((x_1, y_1), \ldots (x_m, y_m))$
 - a hypothesis $h \in \H$
 - a target concept $c \in \C$
 - a loss function $\ell$
