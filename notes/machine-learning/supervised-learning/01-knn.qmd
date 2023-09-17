@@ -1,0 +1,9 @@
+---
+title: "$k$-Nearest Neighbors"
+page-layout: full
+draft: true
+
+format:
+    html:
+        pagetitle: "Notes | k-Nearest Neighbors"
+---

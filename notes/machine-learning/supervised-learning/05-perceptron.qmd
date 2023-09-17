@@ -1,0 +1,8 @@
+---
+title: "Perceptrons"
+page-layout: full
+
+format:
+    html:
+        pagetitle: "Notes | Supervised Learning | Perceptrons"
+--- 

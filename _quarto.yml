@@ -1,0 +1,47 @@
+project:
+  type: website
+
+website:
+  title: "Tiffany Le"
+  site-url: https://tiffanynle.github.io/
+  repo-url: https://github.com/tiffanynle/tiffanynle.github.io
+  repo-actions: [edit, issue]
+  page-navigation: true
+  
+  page-footer: 
+    border: true
+    background: light
+    center:
+      - icon: github
+        href: https://github.com/tiffanynle
+      - icon: envelope-fill
+        href: mailto:tiffanynle.cs@gmail.com
+    right: "website built with [Quarto](https://quarto.org)"
+ 
+  navbar:
+    title: false
+    left:
+      - text: "home"
+        href: index.qmd
+      - text: "notes"
+        href: notes/index.qmd
+      - text: "posts"
+        href: posts.qmd
+      - text: "projects"
+        href: projects.qmd
+  
+  sidebar: 
+    - id: notes
+      title: "Notes"
+      style: "floating"
+      collapse-level: 1
+      align: left
+      contents:
+        - section: "Notes"
+          href: notes/index.qmd
+          contents: # notes/**
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css

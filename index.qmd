@@ -1,0 +1,25 @@
+---
+title: "Hi there."
+image: profile.png
+
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/tiffany-le-5b0927275/
+    - icon: github
+      text: github
+      href: https://github.com/tiffanynle
+    - icon: envelope-fill
+      text: email
+      href: mailto:tiffanynle.cs@gmail.com
+
+sidebar: false
+
+format:
+  html:
+    pagetitle: "Tiffany Le | Home"
+---
+
+My name is Tiffany Le. I am a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/).

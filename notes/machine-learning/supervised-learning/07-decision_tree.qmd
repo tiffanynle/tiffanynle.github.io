@@ -1,0 +1,8 @@
+---
+title: "Decision Trees"
+page-layout: full
+
+format:
+    html:
+        pagetitle: "Notes | Supervised Learning | Decision Trees"
+--- 
