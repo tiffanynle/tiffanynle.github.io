@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Notes | Supervised Learning | Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../notes/index.html" rel="" target="">
+ <span class="menu-text">notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts.html" rel="" target="">
+ <span class="menu-text">posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects.html" rel="" target="">
+ <span class="menu-text">projects</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Notes</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#loss-functions" id="toc-loss-functions" class="nav-link" data-scroll-target="#loss-functions">Loss Functions</a>
+  <ul class="collapse">
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">Regression</a></li>
+  </ul></li>
+  <li><a href="#empirical-risk-minimization" id="toc-empirical-risk-minimization" class="nav-link" data-scroll-target="#empirical-risk-minimization">Empirical Risk Minimization</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/edit/main/notes/machine-learning/supervised-learning/00-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="hidden">
+<p><span class="math display">\[
+\def\X{{\mathcal{X}}}
+\def\Y{{\mathcal{Y}}}
+\def\C{{\mathcal{C}}}
+\def\H{{\mathcal{H}}}
+\def\D{{\mathcal{D}}}
+\def\R{{\mathbb{R}}}
+\def \E{{\mathbb{E}}}
+\]</span></p>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts.</p>
+<p>A non-trivial portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took <a href="https://www.diochnos.com/teaching/CS4033/2023S/index.php">CS4033</a>. Other references will be mentioned when appropriate.</p>
+</section>
+<section id="notation" class="level2">
+<h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Instance Space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>instance space</em> is a set <span class="math inline">\(\X\)</span> that contains the objects we may want to label; i.e., <span class="math inline">\(\X\)</span> is the domain of the function we want to learn.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Instance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>instance</em> is an element <span class="math inline">\(x \in \X\)</span>. Generally, <span class="math inline">\(x\)</span> is a vector of dimension <span class="math inline">\(n\)</span>; i.e., <span class="math display">\[
+x = (x_1, x_2, \ldots x_n).
+\]</span></p>
+<p>The coordinates of <span class="math inline">\(x\)</span> are called <em>attributes</em> or <em>features.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Label Set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>label set</em> is a set <span class="math inline">\(\Y\)</span> that contains the possible labels for the objects in <span class="math inline">\(\X\)</span>; i.e., <span class="math inline">\(\Y\)</span> is the codomain of the function we want to learn.</p>
+<p>An element <span class="math inline">\(y \in \Y\)</span> is called a <em>label.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>example</em> is a labeled instance of form <span class="math inline">\((x, y)\)</span> where <span class="math inline">\(x \in \X, \space y \in \Y.\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>hypothesis</em> is a function <span class="math inline">\(h : \X \rightarrow \Y\)</span> that attempts to hypothesize how reality works, based upon the training examples given as input.</p>
+<p>This may also be called a <em>predictor,</em> a <em>classifier,</em> or a <em>model.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Hypothesis Space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>hypothesis space</em> <span class="math inline">\(\H\)</span> is the set of functions from which we may select one as a hypothesis.</p>
+<p>In other words, <span class="math inline">\(h \in \H.\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>concept</em> is a function <span class="math inline">\(c : \X \rightarrow \Y\)</span> that models reality and performs the labeling on instances in <span class="math inline">\(\X\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Concept Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>concept class</em> is the class of functions <span class="math inline">\(\C\)</span> from which the concept function is coming from.</p>
+<p>In other words, <span class="math inline">\(c \in \C\)</span>.</p>
+</div>
+</div>
+<p>In the supervised setting, we may assume there is some unknown labeling or concept function <span class="math inline">\(c\)</span> that accurately labels instances in <span class="math inline">\(\X.\)</span> We want to be able to <em>learn</em> this function; i.e., we want to have a learner be able to produce a function <span class="math inline">\(h\)</span> that labels instances as <span class="math inline">\(c\)</span> does; i.e., <span class="math inline">\(c\)</span> is our target concept.</p>
+<p>There are some things to note: we do not know what distribution <span class="math inline">\(\D\)</span> governs the instance space <span class="math inline">\(\X\)</span>, so, we have no idea how the instances are generated; we do not have access to <span class="math inline">\(\X\)</span> itself; nor do we know the actual labeling function <span class="math inline">\(c.\)</span> (Otherwise, what is there to learn?)</p>
+<p>What we <em>do</em> have is a list of examples <span class="math inline">\(S\)</span>: <span class="math display">\[
+S = ((x_1, y_1), \ldots (x_m, y_m))
+\]</span></p>
+<p>which we use to train a learner. This learner then outputs some hypothesis <span class="math inline">\(h \in \H\)</span> that may or may not accurately label new, unseen instances in <span class="math inline">\(\X\)</span> that it encounters.</p>
+<p>In other words, the hypothesis <span class="math inline">\(h\)</span> may or may not <em>generalize well.</em></p>
+</section>
+<section id="loss-functions" class="level2">
+<h2 class="anchored" data-anchor-id="loss-functions">Loss Functions</h2>
+<p>We have a list of examples <span class="math inline">\(S,\)</span> so we know how some specific instances <span class="math inline">\(x_1, \ldots x_n \in \X^n\)</span> are labeled. We give some of these examples to a learner, who then outputs some hypothesis <span class="math inline">\(h.\)</span> This hypothesis may or may not generalize well. We want it to.</p>
+<p>The question, then, is: <em>how can the learner learn from its mistakes?</em></p>
+<p>This is where the concept of loss (or error) and loss functions come in. <strong>Loss functions</strong> are of the form<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\ell : \Y \times \Y \rightarrow \R
+\]</span></p>
+<p>where it takes in two labels <span class="math inline">\((y_1, y_2)\)</span> and outputs some penalty. The type of loss function that is used is dependent on several factors, such as the type of problem the learner is working on.</p>
+<p>In the supervised learning setting, there are two types of problems: <strong>classification</strong> and <strong>regression.</strong></p>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">Classification</h3>
+<p>For classification problems, we are attempting to predict classes; an example of this would be determining whether an image is of a dog or a cat, where “dog” and “cat” are class labels. The learner either predicts correctly, or it does not.</p>
+<p>From this, we get the <strong>0–1 loss</strong> function:</p>
+<p><span class="math display">\[
+\ell_{0-1}(y_1, y_2) =
+\begin{cases}
+1, &amp;\text{if } y_1 \neq y_2 \\
+0, &amp;\text{if } y_1 = y_2 \\
+\end{cases}
+\]</span></p>
+<p>Quite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.</p>
+<p>There are other loss functions that may be used for classification problems, such as <strong>cross-entropy loss</strong> (also known as <strong>log-loss</strong>), which is relevant when discussing things like <a href="../../../notes/machine-learning/supervised-learning/04-logistic_regression.html">logistic regression</a>.</p>
+</section>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">Regression</h3>
+<p>For regression problems, we are trying to predict some value in <span class="math inline">\(\R,\)</span> rather than a class label. In these cases, it would not make much sense to use 0–1 loss.</p>
+<p>As for why, consider this: we have that, for some example <span class="math inline">\(x_i,\)</span></p>
+<p><span class="math display">\[
+y_i = c(x_i) = 3.0.
+\]</span></p>
+<p>We also have two different hypotheses <span class="math inline">\(h\)</span> and <span class="math inline">\(h'\)</span> that output <span class="math display">\[
+h(x_i) = 2.8 \enspace \text{and} \enspace h'(x_i) = 0.4.
+\]</span></p>
+<p>With the 0-1 loss, both hypotheses will be given the same penalty, even though one is clearly more accurate than the other. So, rather than making the penalty dependent on whether a prediction is <em>exact,</em> we can make the penalty dependent on the <em>magnitude</em> of the error.</p>
+<p>One option would be to take the <strong>absolute value</strong> of the difference: <span class="math display">\[
+| y_1 - y_2 | = |h(x) - c(x)|
+\]</span></p>
+<p>Another option would be to take the <strong>square</strong> of the difference: <span class="math display">\[
+(y_1 - y_2)^2 = (h(x) - c(x))^2
+\]</span></p>
+<p>Generally, for regression problems, we use the <strong>square (or quadratic) loss</strong> function: <span class="math display">\[
+\ell_{\text{sq}}(y_1, y_2) = (y_1 - y_2)^2
+\]</span></p>
+<p>as this is differentiable everywhere, which is useful in some cases.</p>
+</section>
+</section>
+<section id="empirical-risk-minimization" class="level2">
+<h2 class="anchored" data-anchor-id="empirical-risk-minimization">Empirical Risk Minimization</h2>
+<p>So, for supervised learning problems we have:</p>
+<ul>
+<li>a set of examples <span class="math inline">\(S = ((x_1, y_1), \ldots (x_m, y_m))\)</span></li>
+<li>a hypothesis <span class="math inline">\(h \in \H\)</span></li>
+<li>a target concept <span class="math inline">\(c \in \C\)</span></li>
+<li>a loss function <span class="math inline">\(\ell\)</span></li>
+</ul>
+<p>from which we need to somehow determine the quality of our hypothesis when it labels new, unseen instances in <span class="math inline">\(\X.\)</span></p>
+<p>As a reminder, we do not know <em>anything</em> about the distribution <span class="math inline">\(\D\)</span> that governs <span class="math inline">\(\X.\)</span> We have no idea! Regardless, <span class="math inline">\(h\)</span> will predict labels for these instances <span class="math inline">\(x \sim \D\)</span>, and these predictions may or may not be correct. And with every incorrect prediction, <span class="math inline">\(h\)</span> will incur some penalty.</p>
+<p>From this, we get the idea that there is some <em>expected</em> loss that the hypothesis will suffer over the whole instance space, and the definition of <strong>true risk</strong> follows:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: True Risk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a hypothesis <span class="math inline">\(h \in \H,\)</span> a concept <span class="math inline">\(c \in C,\)</span> some loss function <span class="math inline">\(\ell\)</span>, and some distribution <span class="math inline">\(\D,\)</span> the <em>true risk</em> of a hypothesis is</p>
+<p><span class="math display">\[
+R(h, c) = \E_{x \sim \D} \space \lbrack \ell (h(x), c(x)) \rbrack
+\]</span></p>
+<p>This may also be known as the <em>generalization error</em> or the <em>true error.</em></p>
+</div>
+</div>
+<p>We want to minimize this, but since we do not know anything about <span class="math inline">\(\D,\)</span> we have to use the <em>empirical risk</em> as a stand-in:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Empirical Risk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a hypothesis <span class="math inline">\(h \in \H,\)</span> a concept <span class="math inline">\(c \in C,\)</span> some loss function <span class="math inline">\(\ell\)</span>, and some examples <span class="math inline">\(S = ((x_1, y_1), \ldots (x_n, y_m)),\)</span> the <em>empirical risk</em> of a hypothesis is</p>
+<p><span class="math display">\[
+\hat{R}(h, c) = \frac{1}{n} \sum_{i = 1}^{m} \ell (h(x_i), c(x_i))
+\]</span></p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Actually, there is another way to define loss functions—but that is for another time.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tiffanynle">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:tiffanynle.cs@gmail.com">
+      <i class="bi bi-envelope-fill" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">website built with <a href="https://quarto.org">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>
