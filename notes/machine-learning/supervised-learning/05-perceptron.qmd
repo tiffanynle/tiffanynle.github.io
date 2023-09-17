@@ -1,8 +1,8 @@
 ---
-title: "Perceptron"
+title: "Perceptrons"
 page-layout: full
 
 format:
     html:
-        pagetitle: "Notes | Supervised Learning | Perceptron"
+        pagetitle: "Notes | Supervised Learning | Perceptrons"
 --- 

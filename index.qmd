@@ -6,13 +6,14 @@ about:
   template: jolla
   links:
     - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
+      text: linkedin
+      href: https://www.linkedin.com/in/tiffany-le-5b0927275/
     - icon: github
-      text: GitHub
+      text: github
       href: https://github.com/tiffanynle
     - icon: envelope-fill
-      text: Email
+      text: email
+      href: mailto:tiffanynle.cs@gmail.com
 
 sidebar: false
 
@@ -21,4 +22,4 @@ format:
     pagetitle: "Tiffany Le | Home"
 ---
 
-My name is Tiffany Le. I am a computer science and mathematics student at [OU](https://www.ou.edu/).
+My name is Tiffany Le. I am a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/).

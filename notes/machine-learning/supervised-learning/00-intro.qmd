@@ -79,7 +79,7 @@ In other words, $h \in \H.$
 ::: {.callout-note icon="false"}
 ## Definition: Concept
 
-A *concept* is a function $c : \X \rightarrow \Y$ that actually models reality and performs the labeling on instances in $\X$.
+A *concept* is a function $c : \X \rightarrow \Y$ that models reality and performs the labeling on instances in $\X$.
 :::
 
 ::: {.callout-note icon="false"}
@@ -109,7 +109,7 @@ We have a list of examples $S,$ so we know how some specific instances $x_1, \ld
 
 The question, then, is: *how can the learner learn from its mistakes?*
 
-This is where the concept of loss (or error) and loss functions come in. **Loss functions** are of the form[^2]
+This is where the concept of loss (or error) and loss functions come in. **Loss functions** are of the form[^1]
 
 $$
 \ell : \Y \times \Y \rightarrow \R
@@ -137,7 +137,7 @@ $$
 
 Quite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.
 
-There are other loss functions that may be used for classification, such as **cross-entropy loss** (also known as **log-loss**), which is relevant when discussing things like [logistic regression](04-logistic_regression.qmd).
+There are other loss functions that may be used for classification problems, such as **cross-entropy loss** (also known as **log-loss**), which is relevant when discussing things like [logistic regression](04-logistic_regression.qmd).
 
 ### Regression
 

@@ -15,7 +15,7 @@ website:
       - icon: github
         href: https://github.com/tiffanynle
       - icon: envelope-fill
-        href: https://tiffanynle.github.io
+        href: mailto:tiffanynle.cs@gmail.com
     right: "website built with [Quarto](https://quarto.org)"
  
   navbar:

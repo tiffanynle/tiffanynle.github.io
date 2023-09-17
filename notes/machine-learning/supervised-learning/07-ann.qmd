@@ -1,8 +1,0 @@
----
-title: "Artificial Neural Networks"
-page-layout: full
-
-format:
-    html:
-        pagetitle: "Notes | Artificial Neural Networks"
---- 
