@@ -7,7 +7,7 @@ about:
   links:
     - icon: linkedin
       text: linkedin
-      href: https://www.linkedin.com/in/tiffany-le-5b0927275/
+      href: https://www.linkedin.com/in/tiffany-n-le/
     - icon: github
       text: github
       href: https://github.com/tiffanynle

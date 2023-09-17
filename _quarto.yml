@@ -30,16 +30,17 @@ website:
       - text: "projects"
         href: projects.qmd
   
-  sidebar: 
-    - id: notes
-      title: "Notes"
-      style: "floating"
-      collapse-level: 1
+  sidebar:
+    - id: notes 
+      title: "notes"
+      style: "docked"
+      pinned: true
+      border: true
+      collapse-level: 2
       align: left
       contents:
-        - section: "Notes"
-          href: notes/index.qmd
-          contents: # notes/**
+        - section: "Machine Learning"
+          # contents: notes/machine-learning/**
 
 format:
   html:
