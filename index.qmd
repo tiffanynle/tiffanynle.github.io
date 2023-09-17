@@ -22,4 +22,4 @@ format:
     pagetitle: "Tiffany Le | Home"
 ---
 
-My name is Tiffany Le. I am a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/).
+My name is Tiffany Le. I'm a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/). My interests lie broadly in the realms of security, privacy, and machine learning.

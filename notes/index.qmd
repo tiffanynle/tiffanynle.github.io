@@ -8,9 +8,9 @@ format:
     pagetitle: "Tiffany Le | Notes"
 ---
 
-This is a place to store some of the notes I have taken and cleaned up (and/or expanded on), whether it was for class or otherwise. There may also be links to some resources and other references scattered in various pages. 
+This is a place to store some of the notes I've taken and cleaned up (and/or expanded on), whether it was for class or otherwise. There may also be links to some resources and other references scattered in various pages. 
 
-I cannot guarantee the correctness of any of these, so, if you see something is amiss, please feel free to [report it on GitHub](https://github.com/tiffanynle/tiffanynle.github.io/issues/new).
+I can't guarantee the correctness of any of these, so, if you see something is amiss, please feel free to [report it on GitHub](https://github.com/tiffanynle/tiffanynle.github.io/issues/new).
 
 
 

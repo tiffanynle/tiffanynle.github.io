@@ -36,11 +36,18 @@ website:
       style: "docked"
       pinned: true
       border: true
-      collapse-level: 2
+      collapse-level: 3
       align: left
       contents:
-        - section: "Machine Learning"
-          # contents: notes/machine-learning/**
+        - section: "Notes"
+          href: notes/index.qmd
+          contents:
+            - section: "Machine Learning"
+              href: notes/machine-learning/index.qmd
+              contents:
+                - section: "Supervised Learning"
+                - section: "Learning Theory"
+                  # contents: notes/machine-learning/supervised-learning/**
 
 format:
   html:
