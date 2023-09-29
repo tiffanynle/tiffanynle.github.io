@@ -35,19 +35,28 @@ website:
       title: "notes"
       style: "docked"
       pinned: true
-      border: true
-      collapse-level: 3
+      border: false
+      collapse-level: 2
       align: left
       contents:
         - section: "Notes"
           href: notes/index.qmd
           contents:
+            - section: "Mathematics"
+              contents:
+                - section: "Linear Algebra"
+                - section: "Probability Theory"
+                # - section: "Information Theory"
+                # - section: "Optimization Theory"
             - section: "Machine Learning"
               href: notes/machine-learning/index.qmd
               contents:
                 - section: "Supervised Learning"
                 - section: "Learning Theory"
                   # contents: notes/machine-learning/supervised-learning/**
+            - section: "Cryptography"
+            - section: "Algorithms"
+            - section: "Miscellany"
 
 format:
   html:

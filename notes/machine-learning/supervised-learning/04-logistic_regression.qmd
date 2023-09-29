@@ -1,8 +1,0 @@
----
-title: "Logistic Regression"
-page-layout: full
-
-format:
-    html:
-        pagetitle: "Notes | Supervised Learning | Logistic Regression"
---- 

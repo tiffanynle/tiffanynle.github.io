@@ -1,8 +1,0 @@
----
-title: "Kernel Methods"
-page-layout: full
-
-format:
-    html:
-        pagetitle: "Notes | Supervised Learning | Kernel Methods"
---- 
