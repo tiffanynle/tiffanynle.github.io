@@ -35,8 +35,8 @@ website:
       title: "notes"
       style: "docked"
       pinned: true
-      border: true
-      collapse-level: 3
+      border: false
+      collapse-level: 2
       align: left
       contents:
         - section: "Notes"
@@ -48,6 +48,14 @@ website:
                 - section: "Supervised Learning"
                 - section: "Learning Theory"
                   # contents: notes/machine-learning/supervised-learning/**
+            - section: "Cryptography"
+            - section: "Algorithms"
+            - section: "Mathematics"
+              contents:
+                - section: "Probability Theory"
+                - section: "Number Theory"
+                - section: "Linear Algebra"
+            - section: "Miscellany"
 
 format:
   html:
