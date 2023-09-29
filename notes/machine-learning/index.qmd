@@ -8,7 +8,7 @@ format:
         pagetitle: "Notes | Machine Learning"
 ---
 
-There are quite a few books and resources relevant to machine learning that also happen to be readily available. Some are linked below.
+Links to a few books and resources seemingly relevant to machine learning that also happen to be readily available.
 
 (Disclaimer: I have not looked at all of these.)
 
@@ -16,10 +16,14 @@ There are quite a few books and resources relevant to machine learning that also
 - [Machine Learning](https://www.cs.cmu.edu/~tom/mlbook.html), by Tom Mitchell
 - [An Introduction to Statistical Learning](https://www.statlearning.com/), by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani
 - [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/), by Trevor Hastie, Robert Tibshirani, Jerome Friedman
-- [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/), by Stephen Boyd, Lieven Vandenberghe
 - [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf), by Christopher Bishop
 - [Probabilistic Machine Learning series](https://probml.github.io/pml-book/), by Kevin Murphy
+- [Deep Learning](https://www.deeplearningbook.org/), by Ian Goodfellow, Yoshua Bengio, Aaron Courville 
 - [Understanding Machine Learning: From Theory to Algorithms](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html), by Shai Shalev-Shwartz, Shai Ben-David
 - [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlbook/), by Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar
+- [Mathematics for Machine Learning](https://mml-book.github.io/), by Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong
+- [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/), by Stephen Boyd, Lieven Vandenberghe
+- [Information Theory, Inference, and Learning Algorithms](https://www.inference.org.uk/itprnn/book.html), by David MacKay
+- [Algebra, Topology, Differential Calculus, and Optimization Theory For Computer Science and Machine Learning](https://www.cis.upenn.edu/~jean/math-deep.pdf), by Jean Gallier, Jocelyn Quaintance
 - [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html), by Richard Sutton, Andrew Barto
 - [Algorithms of Reinforcement Learning](https://sites.ualberta.ca/~szepesva/rlbook.html), by Csaba Szepesvári

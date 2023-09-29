@@ -42,6 +42,12 @@ website:
         - section: "Notes"
           href: notes/index.qmd
           contents:
+            - section: "Mathematics"
+              contents:
+                - section: "Linear Algebra"
+                - section: "Probability Theory"
+                # - section: "Information Theory"
+                # - section: "Optimization Theory"
             - section: "Machine Learning"
               href: notes/machine-learning/index.qmd
               contents:
@@ -50,11 +56,6 @@ website:
                   # contents: notes/machine-learning/supervised-learning/**
             - section: "Cryptography"
             - section: "Algorithms"
-            - section: "Mathematics"
-              contents:
-                - section: "Probability Theory"
-                - section: "Number Theory"
-                - section: "Linear Algebra"
             - section: "Miscellany"
 
 format:
