@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tiffany Le | Notes</title>
+<title>Notes | Supervised Learning | Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/machine-learning/index.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,6 +59,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -103,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/index.html">Notes</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -117,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../notes/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../notes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -181,15 +182,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes</h1>
+<h1 class="title">Introduction</h1>
 </div>
 
 
@@ -204,12 +203,247 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a place to store some of the notes I’ve taken and cleaned up (and/or expanded on), whether it was for class or otherwise. There may also be links to some resources and other references scattered in various pages.</p>
-<p>I can’t guarantee the correctness of any of these, so, if you see something is amiss, please feel free to <a href="https://github.com/tiffanynle/tiffanynle.github.io/issues/new">report it on GitHub</a>.</p>
+<div class="hidden">
+<p><span class="math display">\[
+\def\X{{\mathcal{X}}}
+\def\Y{{\mathcal{Y}}}
+\def\C{{\mathcal{C}}}
+\def\H{{\mathcal{H}}}
+\def\D{{\mathcal{D}}}
+\def\R{{\mathbb{R}}}
+\def \E{{\mathbb{E}}}
+\]</span></p>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts.</p>
+<p>A non-trivial portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took <a href="https://www.diochnos.com/teaching/CS4033/2023S/index.php">CS4033</a>. Other references will be mentioned when appropriate.</p>
+</section>
+<section id="notation" class="level2">
+<h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Instance Space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>instance space</em> is a set <span class="math inline">\(\X\)</span> that contains the objects we may want to label; i.e., <span class="math inline">\(\X\)</span> is the domain of the function we want to learn.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Instance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>instance</em> is an element <span class="math inline">\(x \in \X\)</span>. Generally, <span class="math inline">\(x\)</span> is a vector of dimension <span class="math inline">\(n\)</span>; i.e., <span class="math display">\[
+x = (x_1, x_2, \ldots x_n).
+\]</span></p>
+<p>The coordinates of <span class="math inline">\(x\)</span> are called <em>attributes</em> or <em>features.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Label Set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>label set</em> is a set <span class="math inline">\(\Y\)</span> that contains the possible labels for the objects in <span class="math inline">\(\X\)</span>; i.e., <span class="math inline">\(\Y\)</span> is the codomain of the function we want to learn.</p>
+<p>An element <span class="math inline">\(y \in \Y\)</span> is called a <em>label.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <em>example</em> is a labeled instance of form <span class="math inline">\((x, y)\)</span> where <span class="math inline">\(x \in \X, \space y \in \Y.\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>hypothesis</em> is a function <span class="math inline">\(h : \X \rightarrow \Y\)</span> that attempts to hypothesize how reality works, based upon the training examples given as input.</p>
+<p>This may also be called a <em>predictor,</em> a <em>classifier,</em> or a <em>model.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Hypothesis Space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>hypothesis space</em> <span class="math inline">\(\H\)</span> is the set of functions from which we may select one as a hypothesis.</p>
+<p>In other words, <span class="math inline">\(h \in \H.\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>concept</em> is a function <span class="math inline">\(c : \X \rightarrow \Y\)</span> that models reality and performs the labeling on instances in <span class="math inline">\(\X\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Concept Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>concept class</em> is the class of functions <span class="math inline">\(\C\)</span> from which the concept function is coming from.</p>
+<p>In other words, <span class="math inline">\(c \in \C\)</span>.</p>
+</div>
+</div>
+<p>In the supervised setting, we may assume there is some unknown labeling or concept function <span class="math inline">\(c\)</span> that accurately labels instances in <span class="math inline">\(\X.\)</span> We want to be able to <em>learn</em> this function; i.e., we want to have a learner be able to produce a function <span class="math inline">\(h\)</span> that labels instances as <span class="math inline">\(c\)</span> does; i.e., <span class="math inline">\(c\)</span> is our target concept.</p>
+<p>There are some things to note: we do not know what distribution <span class="math inline">\(\D\)</span> governs the instance space <span class="math inline">\(\X\)</span>, so, we have no idea how the instances are generated; we do not have access to <span class="math inline">\(\X\)</span> itself; nor do we know the actual labeling function <span class="math inline">\(c.\)</span> (Otherwise, what is there to learn?)</p>
+<p>What we <em>do</em> have is a list of examples <span class="math inline">\(S\)</span>: <span class="math display">\[
+S = ((x_1, y_1), \ldots (x_m, y_m))
+\]</span></p>
+<p>which we use to train a learner. This learner then outputs some hypothesis <span class="math inline">\(h \in \H\)</span> that may or may not accurately label new, unseen instances in <span class="math inline">\(\X\)</span> that it encounters.</p>
+<p>In other words, the hypothesis <span class="math inline">\(h\)</span> may or may not <em>generalize well.</em></p>
+</section>
+<section id="loss-functions" class="level2">
+<h2 class="anchored" data-anchor-id="loss-functions">Loss Functions</h2>
+<p>We have a list of examples <span class="math inline">\(S,\)</span> so we know how some specific instances <span class="math inline">\(x_1, \ldots x_n \in \X^n\)</span> are labeled. We give some of these examples to a learner, who then outputs some hypothesis <span class="math inline">\(h.\)</span> This hypothesis may or may not generalize well. We want it to.</p>
+<p>The question, then, is: <em>how can the learner learn from its mistakes?</em></p>
+<p>This is where the concept of loss (or error) and loss functions come in. <strong>Loss functions</strong> are of the form<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\ell : \Y \times \Y \rightarrow \R
+\]</span></p>
+<p>where it takes in two labels <span class="math inline">\((y_1, y_2)\)</span> and outputs some penalty. The type of loss function that is used is dependent on several factors, such as the type of problem the learner is working on.</p>
+<p>In the supervised learning setting, there are two types of problems: <strong>classification</strong> and <strong>regression.</strong></p>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">Classification</h3>
+<p>For classification problems, we are attempting to predict classes; an example of this would be determining whether an image is of a dog or a cat, where “dog” and “cat” are class labels. The learner either predicts correctly, or it does not.</p>
+<p>From this, we get the <strong>0–1 loss</strong> function:</p>
+<p><span class="math display">\[
+\ell_{0-1}(y_1, y_2) =
+\begin{cases}
+1, &amp;\text{if } y_1 \neq y_2 \\
+0, &amp;\text{if } y_1 = y_2 \\
+\end{cases}
+\]</span></p>
+<p>Quite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.</p>
+<p>There are other loss functions that may be used for classification problems, such as <strong>cross-entropy loss</strong> (also known as <strong>log-loss</strong>), which is relevant when discussing things like <a href="../drafts/04-logistic_regression.html">logistic regression</a>.</p>
+</section>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">Regression</h3>
+<p>For regression problems, we are trying to predict some value in <span class="math inline">\(\R,\)</span> rather than a class label. In these cases, it would not make much sense to use 0–1 loss.</p>
+<p>As for why, consider this: we have that, for some example <span class="math inline">\(x_i,\)</span></p>
+<p><span class="math display">\[
+y_i = c(x_i) = 3.0.
+\]</span></p>
+<p>We also have two different hypotheses <span class="math inline">\(h\)</span> and <span class="math inline">\(h'\)</span> that output <span class="math display">\[
+h(x_i) = 2.8 \enspace \text{and} \enspace h'(x_i) = 0.4.
+\]</span></p>
+<p>With the 0-1 loss, both hypotheses will be given the same penalty, even though one is clearly more accurate than the other. So, rather than making the penalty dependent on whether a prediction is <em>exact,</em> we can make the penalty dependent on the <em>magnitude</em> of the error.</p>
+<p>One option would be to take the <strong>absolute value</strong> of the difference: <span class="math display">\[
+| y_1 - y_2 | = |h(x) - c(x)|
+\]</span></p>
+<p>Another option would be to take the <strong>square</strong> of the difference: <span class="math display">\[
+(y_1 - y_2)^2 = (h(x) - c(x))^2
+\]</span></p>
+<p>Generally, for regression problems, we use the <strong>square (or quadratic) loss</strong> function: <span class="math display">\[
+\ell_{\text{sq}}(y_1, y_2) = (y_1 - y_2)^2
+\]</span></p>
+<p>as this is differentiable everywhere, which is useful in some cases.</p>
+</section>
+</section>
+<section id="empirical-risk-minimization" class="level2">
+<h2 class="anchored" data-anchor-id="empirical-risk-minimization">Empirical Risk Minimization</h2>
+<p>So, for supervised learning problems we have:</p>
+<ul>
+<li>a list of examples <span class="math inline">\(S = ((x_1, y_1), \ldots (x_m, y_m))\)</span></li>
+<li>a hypothesis <span class="math inline">\(h \in \H\)</span></li>
+<li>a target concept <span class="math inline">\(c \in \C\)</span></li>
+<li>a loss function <span class="math inline">\(\ell\)</span></li>
+</ul>
+<p>from which we need to somehow determine the quality of our hypothesis when it labels new, unseen instances in <span class="math inline">\(\X.\)</span></p>
+<p>As a reminder, we do not know <em>anything</em> about the distribution <span class="math inline">\(\D\)</span> that governs <span class="math inline">\(\X.\)</span> We have no idea! Regardless, <span class="math inline">\(h\)</span> will predict labels for these instances <span class="math inline">\(x \sim \D\)</span>, and these predictions may or may not be correct. And with every incorrect prediction, <span class="math inline">\(h\)</span> will incur some penalty.</p>
+<p>From this, we get the idea that there is some <em>expected</em> loss that the hypothesis will suffer over the whole instance space, and the definition of <strong>true risk</strong> follows:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: True Risk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a hypothesis <span class="math inline">\(h \in \H,\)</span> a concept <span class="math inline">\(c \in C,\)</span> some loss function <span class="math inline">\(\ell\)</span>, and some distribution <span class="math inline">\(\D,\)</span> the <em>true risk</em> of a hypothesis is</p>
+<p><span class="math display">\[
+R(h, c) = \E_{x \sim \D} \space \lbrack \ell (h(x), c(x)) \rbrack
+\]</span></p>
+<p>This may also be known as the <em>generalization error</em> or the <em>true error.</em></p>
+</div>
+</div>
+<p>We want to minimize this, but since we do not know anything about <span class="math inline">\(\D,\)</span> we have to use the <em>empirical risk</em> as a stand-in:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Empirical Risk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a hypothesis <span class="math inline">\(h \in \H,\)</span> a concept <span class="math inline">\(c \in C,\)</span> some loss function <span class="math inline">\(\ell\)</span>, and some examples <span class="math inline">\(S = ((x_1, y_1), \ldots (x_n, y_m)),\)</span> the <em>empirical risk</em> of a hypothesis is</p>
+<p><span class="math display">\[
+\hat{R}(h, c) = \frac{1}{n} \sum_{i = 1}^{m} \ell (h(x_i), c(x_i))
+\]</span></p>
+</div>
+</div>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Actually, there is another way to define loss functions—but that is for another time.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -443,15 +677,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../notes/machine-learning/index.html" class="pagination-link">
-        <span class="nav-page-text">Machine Learning</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -473,7 +698,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/edit/main/notes/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/edit/main/drafts/00-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/tiffanynle/tiffanynle.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">website built with <a href="https://quarto.org">Quarto</a></div>
   </div>
 </footer>

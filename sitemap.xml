@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tiffanynle.github.io/projects.html</loc>
-    <lastmod>2023-09-17T18:37:49.558Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/07-decision_tree.html</loc>
-    <lastmod>2023-09-17T18:37:48.889Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/05-perceptron.html</loc>
-    <lastmod>2023-09-17T18:37:48.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/03-linear_regression.html</loc>
-    <lastmod>2023-09-17T18:37:47.621Z</lastmod>
+    <lastmod>2023-09-29T19:45:46.849Z</lastmod>
   </url>
   <url>
     <loc>https://tiffanynle.github.io/notes/machine-learning/index.html</loc>
-    <lastmod>2023-09-17T18:37:45.972Z</lastmod>
+    <lastmod>2023-09-29T19:45:46.160Z</lastmod>
   </url>
   <url>
     <loc>https://tiffanynle.github.io/index.html</loc>
-    <lastmod>2023-09-17T18:37:45.245Z</lastmod>
+    <lastmod>2023-09-29T19:45:45.430Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/06-kernel_methods.html</loc>
+    <lastmod>2023-09-29T19:45:44.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/04-logistic_regression.html</loc>
+    <lastmod>2023-09-29T19:45:44.117Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/02-naive_bayes.html</loc>
+    <lastmod>2023-09-29T19:45:43.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/00-intro.html</loc>
+    <lastmod>2023-09-29T19:45:42.695Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/03-linear_regression.html</loc>
+    <lastmod>2023-09-29T19:45:43.790Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/05-perceptron.html</loc>
+    <lastmod>2023-09-29T19:45:44.436Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tiffanynle.github.io/drafts/07-decision_tree.html</loc>
+    <lastmod>2023-09-29T19:45:45.098Z</lastmod>
   </url>
   <url>
     <loc>https://tiffanynle.github.io/notes/index.html</loc>
-    <lastmod>2023-09-17T18:37:45.591Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/00-intro.html</loc>
-    <lastmod>2023-09-17T18:37:46.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/02-naive_bayes.html</loc>
-    <lastmod>2023-09-17T18:37:47.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/04-logistic_regression.html</loc>
-    <lastmod>2023-09-17T18:37:47.956Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tiffanynle.github.io/notes/machine-learning/supervised-learning/06-kernel_methods.html</loc>
-    <lastmod>2023-09-17T18:37:48.581Z</lastmod>
+    <lastmod>2023-09-29T19:45:45.762Z</lastmod>
   </url>
   <url>
     <loc>https://tiffanynle.github.io/posts.html</loc>
-    <lastmod>2023-09-17T18:37:49.217Z</lastmod>
+    <lastmod>2023-09-29T19:45:46.504Z</lastmod>
   </url>
 </urlset>
