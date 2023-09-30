@@ -28,48 +28,6 @@
     "text": "My name is Tiffany Le. I’m a computer science and mathematics student at the University of Oklahoma. My interests lie broadly in the realms of security, privacy, and machine learning."
   },
   {
-    "objectID": "drafts/00-intro.html",
-    "href": "drafts/00-intro.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "\\[\n\\def\\X{{\\mathcal{X}}}\n\\def\\Y{{\\mathcal{Y}}}\n\\def\\C{{\\mathcal{C}}}\n\\def\\H{{\\mathcal{H}}}\n\\def\\D{{\\mathcal{D}}}\n\\def\\R{{\\mathbb{R}}}\n\\def \\E{{\\mathbb{E}}}\n\\]"
-  },
-  {
-    "objectID": "drafts/00-intro.html#overview",
-    "href": "drafts/00-intro.html#overview",
-    "title": "Introduction",
-    "section": "Overview",
-    "text": "Overview\nThis page will go over some definitions and notation that may be seen when discussing supervised learning, as well as some other basic concepts.\nA non-trivial portion of the notes in this section (Supervised Learning) are based on lecture materials and notes from when I took CS4033. Other references will be mentioned when appropriate."
-  },
-  {
-    "objectID": "drafts/00-intro.html#notation",
-    "href": "drafts/00-intro.html#notation",
-    "title": "Introduction",
-    "section": "Notation",
-    "text": "Notation\n\n\n\n\n\n\nDefinition: Instance Space\n\n\n\nAn instance space is a set \\(\\X\\) that contains the objects we may want to label; i.e., \\(\\X\\) is the domain of the function we want to learn.\n\n\n\n\n\n\n\n\nDefinition: Instance\n\n\n\nAn instance is an element \\(x \\in \\X\\). Generally, \\(x\\) is a vector of dimension \\(n\\); i.e., \\[\nx = (x_1, x_2, \\ldots x_n).\n\\]\nThe coordinates of \\(x\\) are called attributes or features.\n\n\n\n\n\n\n\n\nDefinition: Label Set\n\n\n\nA label set is a set \\(\\Y\\) that contains the possible labels for the objects in \\(\\X\\); i.e., \\(\\Y\\) is the codomain of the function we want to learn.\nAn element \\(y \\in \\Y\\) is called a label.\n\n\n\n\n\n\n\n\nDefinition: Example\n\n\n\nAn example is a labeled instance of form \\((x, y)\\) where \\(x \\in \\X, \\space y \\in \\Y.\\)\n\n\n\n\n\n\n\n\nDefinition: Hypothesis\n\n\n\nA hypothesis is a function \\(h : \\X \\rightarrow \\Y\\) that attempts to hypothesize how reality works, based upon the training examples given as input.\nThis may also be called a predictor, a classifier, or a model.\n\n\n\n\n\n\n\n\nDefinition: Hypothesis Space\n\n\n\nThe hypothesis space \\(\\H\\) is the set of functions from which we may select one as a hypothesis.\nIn other words, \\(h \\in \\H.\\)\n\n\n\n\n\n\n\n\nDefinition: Concept\n\n\n\nA concept is a function \\(c : \\X \\rightarrow \\Y\\) that models reality and performs the labeling on instances in \\(\\X\\).\n\n\n\n\n\n\n\n\nDefinition: Concept Class\n\n\n\nThe concept class is the class of functions \\(\\C\\) from which the concept function is coming from.\nIn other words, \\(c \\in \\C\\).\n\n\nIn the supervised setting, we may assume there is some unknown labeling or concept function \\(c\\) that accurately labels instances in \\(\\X.\\) We want to be able to learn this function; i.e., we want to have a learner be able to produce a function \\(h\\) that labels instances as \\(c\\) does; i.e., \\(c\\) is our target concept.\nThere are some things to note: we do not know what distribution \\(\\D\\) governs the instance space \\(\\X\\), so, we have no idea how the instances are generated; we do not have access to \\(\\X\\) itself; nor do we know the actual labeling function \\(c.\\) (Otherwise, what is there to learn?)\nWhat we do have is a list of examples \\(S\\): \\[\nS = ((x_1, y_1), \\ldots (x_m, y_m))\n\\]\nwhich we use to train a learner. This learner then outputs some hypothesis \\(h \\in \\H\\) that may or may not accurately label new, unseen instances in \\(\\X\\) that it encounters.\nIn other words, the hypothesis \\(h\\) may or may not generalize well."
-  },
-  {
-    "objectID": "drafts/00-intro.html#loss-functions",
-    "href": "drafts/00-intro.html#loss-functions",
-    "title": "Introduction",
-    "section": "Loss Functions",
-    "text": "Loss Functions\nWe have a list of examples \\(S,\\) so we know how some specific instances \\(x_1, \\ldots x_n \\in \\X^n\\) are labeled. We give some of these examples to a learner, who then outputs some hypothesis \\(h.\\) This hypothesis may or may not generalize well. We want it to.\nThe question, then, is: how can the learner learn from its mistakes?\nThis is where the concept of loss (or error) and loss functions come in. Loss functions are of the form1\n\\[\n\\ell : \\Y \\times \\Y \\rightarrow \\R\n\\]\nwhere it takes in two labels \\((y_1, y_2)\\) and outputs some penalty. The type of loss function that is used is dependent on several factors, such as the type of problem the learner is working on.\nIn the supervised learning setting, there are two types of problems: classification and regression.\n\nClassification\nFor classification problems, we are attempting to predict classes; an example of this would be determining whether an image is of a dog or a cat, where “dog” and “cat” are class labels. The learner either predicts correctly, or it does not.\nFrom this, we get the 0–1 loss function:\n\\[\n\\ell_{0-1}(y_1, y_2) =\n\\begin{cases}\n1, &\\text{if } y_1 \\neq y_2 \\\\\n0, &\\text{if } y_1 = y_2 \\\\\n\\end{cases}\n\\]\nQuite simply, the learner receives a penalty of 1 if it makes an incorrect prediction, and 0 if it does not; i.e., it receives no penalty.\nThere are other loss functions that may be used for classification problems, such as cross-entropy loss (also known as log-loss), which is relevant when discussing things like logistic regression.\n\n\nRegression\nFor regression problems, we are trying to predict some value in \\(\\R,\\) rather than a class label. In these cases, it would not make much sense to use 0–1 loss.\nAs for why, consider this: we have that, for some example \\(x_i,\\)\n\\[\ny_i = c(x_i) = 3.0.\n\\]\nWe also have two different hypotheses \\(h\\) and \\(h'\\) that output \\[\nh(x_i) = 2.8 \\enspace \\text{and} \\enspace h'(x_i) = 0.4.\n\\]\nWith the 0-1 loss, both hypotheses will be given the same penalty, even though one is clearly more accurate than the other. So, rather than making the penalty dependent on whether a prediction is exact, we can make the penalty dependent on the magnitude of the error.\nOne option would be to take the absolute value of the difference: \\[\n| y_1 - y_2 | = |h(x) - c(x)|\n\\]\nAnother option would be to take the square of the difference: \\[\n(y_1 - y_2)^2 = (h(x) - c(x))^2\n\\]\nGenerally, for regression problems, we use the square (or quadratic) loss function: \\[\n\\ell_{\\text{sq}}(y_1, y_2) = (y_1 - y_2)^2\n\\]\nas this is differentiable everywhere, which is useful in some cases."
-  },
-  {
-    "objectID": "drafts/00-intro.html#empirical-risk-minimization",
-    "href": "drafts/00-intro.html#empirical-risk-minimization",
-    "title": "Introduction",
-    "section": "Empirical Risk Minimization",
-    "text": "Empirical Risk Minimization\nSo, for supervised learning problems we have:\n\na list of examples \\(S = ((x_1, y_1), \\ldots (x_m, y_m))\\)\na hypothesis \\(h \\in \\H\\)\na target concept \\(c \\in \\C\\)\na loss function \\(\\ell\\)\n\nfrom which we need to somehow determine the quality of our hypothesis when it labels new, unseen instances in \\(\\X.\\)\nAs a reminder, we do not know anything about the distribution \\(\\D\\) that governs \\(\\X.\\) We have no idea! Regardless, \\(h\\) will predict labels for these instances \\(x \\sim \\D\\), and these predictions may or may not be correct. And with every incorrect prediction, \\(h\\) will incur some penalty.\nFrom this, we get the idea that there is some expected loss that the hypothesis will suffer over the whole instance space, and the definition of true risk follows:\n\n\n\n\n\n\nDefinition: True Risk\n\n\n\nGiven a hypothesis \\(h \\in \\H,\\) a concept \\(c \\in C,\\) some loss function \\(\\ell\\), and some distribution \\(\\D,\\) the true risk of a hypothesis is\n\\[\nR(h, c) = \\E_{x \\sim \\D} \\space \\lbrack \\ell (h(x), c(x)) \\rbrack\n\\]\nThis may also be known as the generalization error or the true error.\n\n\nWe want to minimize this, but since we do not know anything about \\(\\D,\\) we have to use the empirical risk as a stand-in:\n\n\n\n\n\n\nDefinition: Empirical Risk\n\n\n\nGiven a hypothesis \\(h \\in \\H,\\) a concept \\(c \\in C,\\) some loss function \\(\\ell\\), and some examples \\(S = ((x_1, y_1), \\ldots (x_n, y_m)),\\) the empirical risk of a hypothesis is\n\\[\n\\hat{R}(h, c) = \\frac{1}{n} \\sum_{i = 1}^{m} \\ell (h(x_i), c(x_i))\n\\]"
-  },
-  {
-    "objectID": "drafts/00-intro.html#footnotes",
-    "href": "drafts/00-intro.html#footnotes",
-    "title": "Introduction",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nActually, there is another way to define loss functions—but that is for another time.↩︎"
-  },
-  {
     "objectID": "notes/index.html",
     "href": "notes/index.html",
     "title": "Notes",
