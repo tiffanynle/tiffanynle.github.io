@@ -1,5 +1,6 @@
 ---
 title: Page Not Found
+page-layout: full
 sidebar: false
 
 format:

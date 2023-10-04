@@ -7,6 +7,7 @@ listing:
   type: default
   categories: true
 
+page-layout: full
 sidebar: false
 
 format:
