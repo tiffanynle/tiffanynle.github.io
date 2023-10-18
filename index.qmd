@@ -1,9 +1,11 @@
 ---
-title: "Hi there."
+title: "Tiffany Le"
 image: profile.png
 
 about:
-  template: jolla
+  id: about
+  template: solana
+  image-shape: rounded
   links:
     - icon: linkedin
       text: Linkedin
@@ -11,6 +13,12 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/tiffanynle
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/_tiffanynle
+    - icon: mastodon
+      text: Mastodon
+      href: https://mathstodon.xyz/@tiffanynle
     - icon: envelope-fill
       text: Email
       href: mailto:tiffanynle.cs@gmail.com
@@ -22,4 +30,8 @@ format:
     pagetitle: "Tiffany Le | Home"
 ---
 
-My name is Tiffany Le. I'm a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/). My interests lie broadly in the realms of security, privacy, and machine learning.
+:::{#about}
+
+Hi there. I'm a computer science and mathematics student at the [University of Oklahoma](https://www.ou.edu/). My interests lie broadly in the realms of security, privacy, and machine learning.
+
+:::
