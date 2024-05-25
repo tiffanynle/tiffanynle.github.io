@@ -1,0 +1,48 @@
+---
+title: "Tiffany Le"
+pagetitle: "Tiffany Le | Home"
+image: banner.jpg
+
+about:
+  id: about
+  template: marquee
+  image-shape: rounded
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/tiffany-n-le/
+    - icon: github
+      text: GitHub
+      href: https://github.com/tiffanynle
+    - icon: gitlab
+      text: GitLab
+      href: https://gitlab.com/tiffanynle
+    - icon: mastodon
+      text: Mastodon
+      href: https://mathstodon.xyz/@tiffanynle
+
+# listing:
+#   id: recent-posts
+#   contents: posts
+#   sort: "date desc"
+#   type: grid
+#   categories: false
+#   max-items: 3
+#   fields: [title, date]
+---
+
+:::{#about}
+
+I am a senior at the [University of Oklahoma](https://www.ou.edu/) studying computer science and mathematics. I am also an undergraduate research assistant for the NSF AI Institute for Research on Trustworthy AI in Weather, Climate, and Coastal Oceanography ([AI2ES](https://www.ai2es.org/)), where I work with [Dimitrios Diochnos](https://diochnos.com/) and [Jay Rothenberger](http://www.jayrothenberger.com/) on semi-supervised learning methods.
+
+My academic interests lie broadly within the realms of security, privacy, and machine learning. I have experience with machine learning, distributed computing, and software development, and have also dabbled with applied cryptography and other areas in security.
+
+The painting above is by Winslow Homer, titled *Weatherbeaten.*
+
+## Contact Me
+
+Email: `tiffanynle dot cs at gmail dot com`
+
+Discord: `tiffanynle`
+
+:::
