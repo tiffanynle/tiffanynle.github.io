@@ -20,14 +20,8 @@ about:
       text: Mastodon
       href: https://mathstodon.xyz/@tiffanynle
 
-# listing:
-#   id: recent-posts
-#   contents: posts
-#   sort: "date desc"
-#   type: grid
-#   categories: false
-#   max-items: 3
-#   fields: [title, date]
+open-graph:
+  image: thumbnail.jpg
 ---
 
 :::{#about}
