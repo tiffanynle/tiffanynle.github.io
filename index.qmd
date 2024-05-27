@@ -22,6 +22,8 @@ about:
 
 open-graph:
   image: thumbnail.jpg
+twitter-card:
+  image: thumbnail.jpg
 ---
 
 :::{#about}
