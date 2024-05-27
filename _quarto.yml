@@ -3,10 +3,11 @@ project:
 
 website:
   title: "Tiffany Le"
-  description: "Tiffany Le's personal website."
-  image: thumbnail.jpg
   favicon: favicon.ico
-  open-graph: true
+  open-graph: 
+    image: thumbnail.jpg
+  twitter-card: 
+    image: thumbnail.jpg
 
   site-url: https://tiffanynle.github.io/
   repo-url: https://github.com/tiffanynle/tiffanynle.github.io
@@ -43,8 +44,6 @@ highlight-style: github
 
 callout-appearance: simple
 callout-icon: true
-
-pagetitle: "Tiffany Le | {{< meta title >}}"
 
 format:
   html:
