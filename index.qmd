@@ -1,0 +1,31 @@
+---
+title: "tiffany le"
+subtitle: ""
+image: profile.png
+
+about:
+  id: about
+  template: solana
+  image-shape: rounded
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/tiffany-n-le/
+    - icon: github
+      text: GitHub
+      href: https://github.com/tiffanynle
+    - icon: mastodon
+      text: Mastodon
+      href: https://mathstodon.xyz/@tiffanynle
+    - icon: envelope-fill
+      text: Email
+      href: mailto:tiffanynle.cs@gmail.com
+---
+
+::: {#about}
+hey, hi, welcome.
+i like to mess with things (code and math, mostly).
+sometimes i may post some of my [notes](/notes.qmd) and [writings](/posts.qmd) on those things here.
+
+you can reach me by email or discord `@tiffanynle`.
+:::
