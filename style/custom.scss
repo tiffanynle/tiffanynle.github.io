@@ -1,0 +1,229 @@
+/*-- scss:defaults --*/
+
+// Color scheme taken from Catppuccin
+// https://catppuccin.com/
+$rosewater-mocha: #f5e0dc;
+$flamingo-mocha: #f2cdcd;
+$pink-mocha: #f5c2e7;
+$mauve-mocha: #cba6f7;
+$red-mocha: #f38ba8;
+$maroon-mocha: #eba0ac;
+$peach-mocha: #fab387;
+$yellow-mocha: #f9e2af;
+$green-mocha: #a6e3a1;
+$teal-mocha: #94e2d5;
+$sky-mocha: #89dceb;
+$sapphire-mocha: #74c7ec;
+$blue-mocha: #89b4fa;
+$lavender-mocha: #b4befe;
+$text-mocha: #cdd6f4;
+$subtext1-mocha: #bac2de;
+$subtext0-mocha: #a6adc8;
+$overlay2-mocha: #9399b2;
+$overlay1-mocha: #7f849c;
+$overlay0-mocha: #6c7086;
+$surface2-mocha: #585b70;
+$surface1-mocha: #45475a;
+$surface0-mocha: #313244;
+$base-mocha: #1e1e2e;
+$mantle-mocha: #181825;
+$crust-mocha: #11111b;
+
+// Color overrides
+$success: $green-mocha;
+$info: $blue-mocha;
+$warning: $yellow-mocha;
+$danger: $red-mocha;
+
+// Accent color
+$accent-color: $green-mocha;
+
+// Base document colors
+$body-bg: $base-mocha;
+$body-color: $text-mocha;
+$link-color: $blue-mocha;
+
+// Blockquote, figure caption
+$body-secondary: $subtext0-mocha;
+
+// Navigation
+$navbar-bg: $crust-mocha;
+$navbar-fg: $subtext0-mocha;
+$navbar-hl: $accent-color;
+
+// Sidebar
+$sidebar-fg: $subtext1-mocha;
+$sidebar-hl: $accent-color;
+
+// Footer
+$footer-bg: $base-mocha;
+$footer-fg: $subtext0-mocha;
+
+// Table of Contents
+$toc-color: $accent-color;
+
+// Inline code
+$code-bg: $mantle-mocha;
+$code-color: $text-mocha;
+
+// Code blocks
+$code-block-bg: $mantle-mocha;
+
+// Code copy
+$btn-code-copy-color: $overlay1-mocha;
+$btn-code-copy-color-active: $mauve-mocha;
+
+// Callouts
+$callout-color-note: $blue-mocha;
+$callout-color-tip: $green-mocha;
+$callout-color-caution: $peach-mocha;
+$callout-color-warning: $yellow-mocha;
+$callout-color-important: $red-mocha;
+
+// Font family
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Mermaid styling
+$mermaid-body-bg: $surface0-mocha;
+$mermaid-secondary: $subtext0-mocha;
+$mermaid-body-color: $subtext1-mocha;
+$mermaid-primary: $lavender-mocha;
+
+$mermaid-bg-color: $mermaid-body-bg;
+$mermaid-edge-color: $mermaid-secondary;
+$mermaid-node-fg-color: $mermaid-body-color;
+$mermaid-fg-color: $mermaid-body-color;
+$mermaid-fg-color--lighter: lighten($mermaid-body-color, 10%);
+$mermaid-fg-color--lightest: lighten($mermaid-body-color, 20%);
+$mermaid-font-family: $font-family-monospace;
+$mermaid-label-bg-color: $mermaid-body-bg;
+$mermaid-label-fg-color: $mermaid-primary;
+$mermaid-node-bg-color: rgba($mermaid-primary, 0.1);
+$mermaid-node-fg-color: $mermaid-primary;
+
+/*-- scss:rules --*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $subtext1-mocha;
+    text-transform: lowercase;
+}
+
+.subtitle {
+    text-transform: lowercase;
+}
+
+body {
+    font-family: $font-family-monospace;
+    // text-transform: lowercase;
+}
+
+// blockquote styling
+blockquote {
+    border-left: 0.25rem solid $accent-color;
+}
+
+// navbar styling
+.navbar {
+    text-transform: lowercase;
+}
+
+// callout styling
+.callout {
+    background-color: $base-mocha;
+    border-radius: 0;
+}
+
+.callout.callout-style-simple {
+    border-color: $surface2-mocha;
+}
+
+// post category styling
+.quarto-title .quarto-categories .quarto-category {
+    color: $overlay1-mocha;
+    font-size: 0.75em;
+    border-radius: 0;
+    opacity: 1;
+    text-transform: lowercase;
+}
+
+// sidebar styling
+.sidebar {
+    text-transform: lowercase;
+}
+
+// quarto metadata block styling
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading {
+    text-transform: lowercase;
+}
+
+// homepage link styling for solana template
+div.quarto-about-solana .about-links .about-link {
+    color: $subtext0-mocha;
+    border-radius: 0;
+    &:hover {
+        color: $accent-color;
+    }
+    text-transform: lowercase;
+}
+
+// homepage link styling for jolla template
+div.quarto-about-jolla .about-links .about-link {
+    color: $subtext0-mocha;
+    border-radius: 0;
+    &:hover {
+        color: $accent-color;
+    }
+    text-transform: lowercase;
+}
+
+// homepage link styling for trestles template
+div.quarto-about-trestles .about-links .about-link {
+    color: $subtext0-mocha;
+    border-radius: 0;
+    &:hover {
+        color: $accent-color;
+    }
+    text-transform: lowercase;
+}
+
+// table styling
+.table {
+    border-top: none;
+    border-bottom: none;
+}
+
+.table td {
+    border: none;
+}
+
+.table thead {
+    border-color: $surface0-mocha;
+    text-transform: lowercase;
+}
+
+.table tr {
+    &:nth-child(odd) td {
+        background-color: $mantle-mocha;
+    }
+}
+
+// listing button styling
+.input-group-text {
+    background-color: $base-mocha;
+    border-color: $surface2-mocha;
+}
+
+// styling for dropdowns
+.form-select {
+    border-color: $surface2-mocha;
+}
+
+// styling for text boxes
+.form-control {
+    border-color: $surface2-mocha;
+}

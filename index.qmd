@@ -1,0 +1,30 @@
+---
+title: "tiffany le"
+subtitle: ""
+image: images/profile.png
+
+about:
+  id: about
+  template: solana
+  image-shape: rounded
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/tiffany-n-le/
+    - icon: github
+      text: GitHub
+      href: https://github.com/tiffanynle
+    - icon: gitlab
+      text: GitLab
+      href: https://gitlab.com/tiffanynle
+    - icon: envelope-fill
+      text: Email
+      href: mailto:tiffanynle.cs@gmail.com
+---
+
+::: {#about}
+hey, hi, welcome.
+this is a place for me to keep my [notes](/notes.qmd) and [writings](/posts.qmd) on various things (programming, math, ... and so on).
+
+you can reach me by email or discord `@tiffanynle`.
+:::

@@ -1,0 +1,45 @@
+project:
+  type: website
+
+website:
+  title: "tiffany le"
+  favicon: images/favicon.ico
+
+  site-url: https://tiffanynle.github.io/
+  repo-url: https://github.com/tiffanynle/tiffanynle.github.io
+
+  page-navigation: true
+  bread-crumbs: true
+  search: false
+
+  page-footer:
+    center:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/tiffany-n-le/
+      - icon: github
+        href: https://github.com/tiffanynle
+      - icon: gitlab
+        href: https://gitlab.com/tiffanynle
+      - icon: envelope-fill
+        href: mailto:tiffanynle.cs@gmail.com
+
+  navbar:
+    title: "tiffany le"
+    pinned: false
+    right:
+      - text: "home"
+        href: index.qmd
+      - text: "notes"
+        href: notes.qmd
+      - text: "posts"
+        href: posts.qmd
+
+highlight-style: style/catppuccin-mocha.theme
+
+callout-appearance: simple
+callout-icon: true
+
+format:
+  html:
+    theme: [cosmo, style/custom.scss]
+    html-math-method: mathjax

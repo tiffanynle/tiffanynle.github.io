@@ -1,0 +1,15 @@
+---
+title: "posts"
+subtitle: "under construction"
+
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  fields: [date, title, categories]
+  categories: numbered
+
+  table-striped: true
+  sort-ui: false
+  filter-ui: false
+---
